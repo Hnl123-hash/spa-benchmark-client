@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useNewsFeed } from "../hooks/useNewsFeed";
 import Loading from "../components/Loading";
 import PageTitle from "../components/PageTitle";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function NewsCard({ post }: { post: any }) {
   return (
     <div className="bg-white rounded-lg shadow-md p-5 mb-4">
@@ -10,7 +10,7 @@ function NewsCard({ post }: { post: any }) {
       <p className="text-gray-600 mb-3">{post.body.substring(0, 150)}...</p>
       <div className="flex justify-between items-center">
         <div className="flex gap-2">
-          {post.tags.map((tag) => (
+          {post.tags.map((tag: any) => (
             <span
               key={tag}
               className="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full"
@@ -20,7 +20,7 @@ function NewsCard({ post }: { post: any }) {
           ))}
         </div>
         <span className="text-sm font-medium text-gray-500">
-          {post.reactions} Reações
+          {post.reactions.likes} Reações
         </span>
       </div>
     </div>

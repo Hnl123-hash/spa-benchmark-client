@@ -9,7 +9,10 @@ export interface Post {
   title: string;
   body: string;
   tags: string[];
-  reactions: number;
+  reactions: {
+    likes: number;
+    dislikes: number;
+  };
 }
 
 export const fetchNewsFeed = async (): Promise<Post[]> => {
